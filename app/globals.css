@@ -14,9 +14,11 @@ body {
 }
 
 :root {
+  --gray-light: #EBEBEB;
   --black: #3B434E;
   --white: white;
   --primary: #7653FC;
+  --primary-hover: #6344df;
   --red: #FC836D;
   --green: #1DC37E;
   --green-light: #C8F8E4;
