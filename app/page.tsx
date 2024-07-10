@@ -10,14 +10,3 @@ export default async function Home() {
     </div>
   );
 }
-
-// export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-//   const firstCategory = 0
-//   const {data: menu} = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find')
-//   return {
-//     props: {
-//       menu,
-//       firstCategory
-//     }
-//   }
-// }
