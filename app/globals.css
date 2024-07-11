@@ -15,6 +15,7 @@ body {
 
 :root {
   --gray-light: #EBEBEB;
+  --gray-dark: #787D85;
   --black: #3B434E;
   --white: white;
   --primary: #7653FC;
@@ -23,4 +24,9 @@ body {
   --green: #1DC37E;
   --green-light: #C8F8E4;
   --font-family: "Noto Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
