@@ -54,3 +54,11 @@
 .thirdLevel:hover {
     color: var(--primary);
 }
+
+.secondLevelBlock {
+    display: none;
+}
+
+.secondLevelBlockOpened {
+    display: block;
+}
