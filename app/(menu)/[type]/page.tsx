@@ -3,7 +3,7 @@ import { firstLevelMenu } from "@/helpers/helpers"
 import styles from '../../layout.module.css'
 import { getMenu } from "@/api/menu"
 
-export default async function Type({params, ...props}: {params: {type: string}}) {
+export default async function Type({params}: {params: {type: string}}) {
     const menu = await getMenu(0, params.type)
     const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type)
     return (
