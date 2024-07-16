@@ -15,7 +15,6 @@ export default async function TopPage({params}: {params: {alias: string, type: s
     if(menu.length === 0) {
         return notFound()
     }
-    console.log(firstCategory)
     return (
         <>
             <Sidebar className={styles.sidebar} menu={menu}/>
