@@ -27,13 +27,13 @@ export interface TopPageModal {
     alias: string
     title: string
     category: string
-    seoText: string
+    seoText?: string
     tagsTitle: string
     metaTitle: string
     metaDescription: string
     firstCategory: TopLevelCategory
-    advantages: TopPageAdvantage[]
+    advantages?: TopPageAdvantage[]
     createdAt: Date
     updatedAt: Date
-    hh: HhDate
+    hh?: HhDate
 }
