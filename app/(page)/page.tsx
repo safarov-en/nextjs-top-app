@@ -1,6 +1,5 @@
-import Menu from "@/components/Menu/Menu";
+import { Input } from "@/components/Input/Input";
 
 export default async function Home() {
-  return <></>
-    
+  return <><Input /></>
 }
