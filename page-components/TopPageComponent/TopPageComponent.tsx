@@ -11,6 +11,7 @@ import { Sort } from "@/components/Sort/Sort"
 import { SortEnum } from "@/components/Sort/Sort.props"
 import { useReducer } from "react"
 import { sortReducer } from "./sort.reducer"
+import { Product } from "@/components/Product/Product"
 
 export const TopPageComponent = ({products, page, firstCategory}: TopPageComponentProps) => {
     const [{products: sortedProducts, sort}, dispathSort] = useReducer(sortReducer, {products, sort: SortEnum.Rating})
@@ -25,7 +26,7 @@ export const TopPageComponent = ({products, page, firstCategory}: TopPageCompone
                 <Sort sort={sort} setSort={setSort} />
             </div>
             <div>
-                {sortedProducts && sortedProducts.map(p => (<div key={p._id}>{p.title}</div>))}
+                {sortedProducts && sortedProducts.map(p => (<Product product={p} key={p._id} />))}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag='h2'>Вакансия - {page.category}</Htag>
