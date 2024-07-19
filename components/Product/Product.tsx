@@ -22,7 +22,15 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
             <div className={styles.rateTitle}>{product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</div>
             <Divider className={styles.hr} />
             <div className={styles.description}>{product.description}</div>
-            <div className={styles.feature}>фичи</div>
+            <div className={styles.feature}>
+                {product.characteristics.map(c => (
+                    <div className={styles.characteristics} key={c.name}>
+                        <span className={styles.characteristicsName}>{c.name}</span>
+                        <span className={styles.characteristicsDots}></span>
+                        <span className={styles.characteristicsValue}>{c.value}</span>
+                    </div>
+                ))}
+            </div>
             <div className={styles.advBlock}>
                 {product.advantages && <div className={styles.advantages}>
                     <div className={styles.advTitle}>Преимущества</div>
