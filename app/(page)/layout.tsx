@@ -25,7 +25,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className={styles.wrapper}>
-          <Header className={styles.header}/>
+          <Header className={styles.header} menu={menu}/>
           <Sidebar className={styles.sidebar} menu={menu}/>
           <div className={styles.body}>
             {children}
