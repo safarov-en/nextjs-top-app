@@ -44,10 +44,10 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 19px;
-}
-
-.secondLevelBlockOpened:last-child {
-    margin-bottom: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 180px;
 }
 
 .thirdLevelActive,
@@ -56,9 +56,5 @@
 }
 
 .secondLevelBlock {
-    display: none;
-}
-
-.secondLevelBlockOpened {
-    display: block;
+    overflow: hidden;
 }
