@@ -9,7 +9,7 @@ import { TopLevelCategory } from "@/interfaces/page.interface"
 import { Advantages } from "@/components/Advantages/Advantages"
 import { Sort } from "@/components/Sort/Sort"
 import { SortEnum } from "@/components/Sort/Sort.props"
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import { sortReducer } from "./sort.reducer"
 import { Product } from "@/components/Product/Product"
 
@@ -18,6 +18,9 @@ export const TopPageComponent = ({products, page, firstCategory}: TopPageCompone
     const setSort = (sort: SortEnum) => {
         dispathSort({type: sort})
     }
+    useEffect(() => {
+        dispathSort({type: 'reset', initialState: products})
+    }, [products])
     return (
         <div className={styles.wrapper}>
             <div className={styles.title}>
