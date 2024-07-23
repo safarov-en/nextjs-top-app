@@ -6,6 +6,7 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import { getMenuItem } from "@/api/menu";
+import { Up } from "@/components/Up/Up";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default async function RootLayout({
             {children}
           </div>
           <Footer className={styles.footer}/>
+          <Up />
         </div>
       </body>
     </html>

@@ -4,6 +4,7 @@ import "../globals.css";
 import styles from '../layout.module.css'
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
+import { Up } from "@/components/Up/Up";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Header className={styles.header}/>
           {children}
           <Footer className={styles.footer}/>
+          <Up />
         </div>
       </body>
     </html>
