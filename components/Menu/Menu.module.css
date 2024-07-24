@@ -26,7 +26,6 @@
     color: var(--gray-dark);
     font-weight: 300;
     font-size: 12px;
-    line-height: 16px;
 }
 
 .secondBlock {
@@ -43,11 +42,11 @@
     color: var(--gray-dark);
     font-weight: 500;
     font-size: 14px;
-    line-height: 19px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 180px;
+    outline-offset: -1px;
 }
 
 .thirdLevelActive,
