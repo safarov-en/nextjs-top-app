@@ -6,6 +6,7 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { Up } from "@/components/Up/Up";
 import { getMenuItem } from "@/api/menu";
+import Metrika from "@/components/Metrika/Metrika";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default async function RootLayout({
           {children}
           <Footer className={styles.footer}/>
           <Up />
+          <Metrika />
         </div>
       </body>
     </html>
