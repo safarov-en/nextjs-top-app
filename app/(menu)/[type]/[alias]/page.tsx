@@ -10,6 +10,9 @@ import Head from "next/head";
 
 export default async function TopPage({params}: {params: {alias: string, type: string}}) {
     const page = await getPage(params.alias)
+    if (!page.category) {
+        return notFound()
+    }
     const products = await getProducts(page.category, 10)
     const menu = await getMenu(0, params.type)
     const firstCategory = firstLevelMenu.find(m => m.route == params.type)
@@ -20,18 +23,21 @@ export default async function TopPage({params}: {params: {alias: string, type: s
         <>
             <Sidebar className={styles.sidebar} menu={menu}/>
             <div className={styles.body}>
-                <Head>
-                    <title>{page.metaTitle}</title>
-                    <meta name="description" content={page.metaDescription} />
-                    <meta property="og:title" content={page.metaTitle} />
-                    <meta property="og:description" content={page.metaDescription} />
-                    <meta property='og:locale' content='article' />
-                </Head>
-                <TopPageComponent
-                    products={products}
-                    page={page}
-                    firstCategory={firstCategory?.id}
-                />
+                {page && products && <>
+                    <Head>
+                        <title>{page.metaTitle}</title>
+                        <meta name="description" content={page.metaDescription} />
+                        <meta property="og:title" content={page.metaTitle} />
+                        <meta property="og:description" content={page.metaDescription} />
+                        <meta property='og:locale' content='article' />
+                    </Head>
+                    <TopPageComponent
+                        products={products}
+                        page={page}
+                        firstCategory={firstCategory?.id}
+                    />
+                </>
+                }
             </div>
         </>
     )
