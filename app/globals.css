@@ -13,6 +13,13 @@ body {
   margin: 0;
 }
 
+.visualyHidden {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 :root {
   --gray-light: #EBEBEB;
   --gray: #A4A4A4;
