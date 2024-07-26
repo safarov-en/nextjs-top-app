@@ -19,6 +19,10 @@
     gap: 40px;
 }
 
+.sortName {
+    display: none;
+}
+
 .sort span {
     display: grid;
     gap: 8px;
