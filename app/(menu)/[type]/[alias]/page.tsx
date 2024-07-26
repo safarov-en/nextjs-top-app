@@ -6,6 +6,7 @@ import styles from '../../../layout.module.css'
 import { firstLevelMenu } from "@/helpers/helpers";
 import { notFound } from "next/navigation";
 import { TopPageComponent } from "@/page-components/TopPageComponent/TopPageComponent";
+import Head from "next/head";
 
 export default async function TopPage({params}: {params: {alias: string, type: string}}) {
     const page = await getPage(params.alias)
@@ -19,6 +20,13 @@ export default async function TopPage({params}: {params: {alias: string, type: s
         <>
             <Sidebar className={styles.sidebar} menu={menu}/>
             <div className={styles.body}>
+                <Head>
+                    <title>{page.metaTitle}</title>
+                    <meta name="description" content={page.metaDescription} />
+                    <meta property="og:title" content={page.metaTitle} />
+                    <meta property="og:description" content={page.metaDescription} />
+                    <meta property='og:locale' content='article' />
+                </Head>
                 <TopPageComponent
                     products={products}
                     page={page}
