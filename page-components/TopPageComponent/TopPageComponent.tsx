@@ -13,9 +13,11 @@ import { useEffect, useReducer } from "react"
 import { sortReducer } from "./sort.reducer"
 import { Product } from "@/components/Product/Product"
 import { useScrollY } from "@/hooks/useScrollY"
+import { useReducedMotion } from "framer-motion"
 
 export const TopPageComponent = ({products, page, firstCategory}: TopPageComponentProps) => {
     const [{products: sortedProducts, sort}, dispathSort] = useReducer(sortReducer, {products, sort: SortEnum.Rating})
+    const shouldReduceMotion = useReducedMotion()
     const y = useScrollY()
     const setSort = (sort: SortEnum) => {
         dispathSort({type: sort})
@@ -31,7 +33,7 @@ export const TopPageComponent = ({products, page, firstCategory}: TopPageCompone
                 <Sort sort={sort} setSort={setSort} />
             </div>
             <div role='list'>
-                {sortedProducts && sortedProducts.map(p => (<Product role='listitem' layout product={p} key={p._id} />))}
+                {sortedProducts && sortedProducts.map(p => (<Product role='listitem' layout={shouldReduceMotion ? false : true} product={p} key={p._id} />))}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag='h2'>Вакансия - {page.category}</Htag>
