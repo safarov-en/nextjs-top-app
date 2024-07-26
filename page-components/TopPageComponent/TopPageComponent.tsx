@@ -30,8 +30,8 @@ export const TopPageComponent = ({products, page, firstCategory}: TopPageCompone
                 {products && <Tag color='grey' size='m' aria-label={products.length + 'элементов'}>{products.length}</Tag>}
                 <Sort sort={sort} setSort={setSort} />
             </div>
-            <div>
-                {sortedProducts && sortedProducts.map(p => (<Product layout product={p} key={p._id} />))}
+            <div role='list'>
+                {sortedProducts && sortedProducts.map(p => (<Product role='listitem' layout product={p} key={p._id} />))}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag='h2'>Вакансия - {page.category}</Htag>
