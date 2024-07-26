@@ -7,12 +7,12 @@ export default async function Type({params}: {params: {type: string}}) {
     const menu = await getMenu(0, params.type)
     const firstCategoryItem = firstLevelMenu.find(m => m.route == params.type)
     return (
-        <div tabIndex={0}>
+        <main tabIndex={0} role='main'>
             <Sidebar className={styles.sidebar} menu={menu}/>
             <div className={styles.body}>
                 Page {firstCategoryItem?.id}
             </div>
-        </div>
+        </main>
     )
 }
 

@@ -106,8 +106,8 @@ export default function Menu({menu}: {menu: MenuItem[]}) {
         )
     }
     return (
-        <div className={styles.menu}>
-            <>{buildFirstLevel()}</>
-        </div>
+        <nav className={styles.menu} role='navigation'>
+            {buildFirstLevel()}
+        </nav>
     );
 }

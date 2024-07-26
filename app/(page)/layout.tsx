@@ -27,9 +27,9 @@ export default async function RootLayout({
         <div className={styles.wrapper}>
           <Header className={styles.header} menu={menu}/>
           <Sidebar className={styles.sidebar} menu={menu}/>
-          <div className={styles.body} tabIndex={0}>
+          <main className={styles.body} tabIndex={0} role='main'>
             {children}
-          </div>
+          </main>
           <Footer className={styles.footer}/>
           <Up />
         </div>
